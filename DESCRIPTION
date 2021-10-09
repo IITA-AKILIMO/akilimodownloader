@@ -1,0 +1,15 @@
+Package: akilimodownloader
+Title: File Download
+Version: 0.0.1
+Authors@R: 
+    person("Sammy", "Munywele", , "barsamms@gmail.com", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0001-8821-3446"))
+Description: Allows download for files from a REST api endpoint using RCurl Library.
+License: GPLv3
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.2
+Imports:
+    RCurl,
+    Jsonlite
