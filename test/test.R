@@ -1,5 +1,4 @@
 if(identical(find.package("akilimodownloader", quiet=TRUE), character(0))){
-  library(devtools)
   devtools::install_github("IITA-AKILIMO/akilimodownloader")
 }
 library(akilimodownloader)
