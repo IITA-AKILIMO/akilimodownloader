@@ -59,5 +59,5 @@ process_download <- function(fileName,fileFolder="",
   }
   print(uri)
 
-  resp <-akilimodownloader::download_file(url=uri,file = fileName,body = body,hdr=hdr)
+  resp <-download_file(url=uri,file = fileName,body = body,hdr=hdr)
 }
