@@ -2,26 +2,6 @@
 headers <- list(Accept="text/*",Accept="application/*",
             'Content-Type' = "application/json")
 
-#' Download a csv file specified in the body parameter
-#'
-#' This function takes three parameters
-#' The download endpoint, name of the file to be saved and the details for the file being requested
-#'
-#' @param url endpoint for the download
-#' @param file name of the file to be saved
-#' @param bod contains data to be sent to the download endpoint
-#' @param hdr HTTP headers for additional information
-#' @return download status
-#' @export
-download_file <- function(url,file,body,hdr=headers){
-  fileWriter = RCurl::CFILE(file, mode="wb")
-  curlResults = RCurl::curlPerform(url = url, writedata = fileWriter@ref, noprogress=FALSE,
-                            .opts = list(httpheader=hdr,postfields=body,verbose=TRUE))
-
-  print(paste("Saving file",file," to ",getwd()))
-  RCurl::close(fileWriter)
-  return(curlResults)
-}
 
 #' Process download
 #'
@@ -60,4 +40,25 @@ process_download <- function(fileName,fileFolder="",
   print(uri)
 
   resp <-download_file(url=uri,file = fileName,body = body,hdr=hdr)
+}
+
+#' Download a csv file specified in the body parameter
+#'
+#' This function takes three parameters
+#' The download endpoint, name of the file to be saved and the details for the file being requested
+#'
+#' @param url endpoint for the download
+#' @param file name of the file to be saved
+#' @param bod contains data to be sent to the download endpoint
+#' @param hdr HTTP headers for additional information
+#' @return download status
+#' @export
+download_file <- function(url,file,body,hdr=headers){
+  fileWriter = RCurl::CFILE(file, mode="wb")
+  curlResults = RCurl::curlPerform(url = url, writedata = fileWriter@ref, noprogress=FALSE,
+                                   .opts = list(httpheader=hdr,postfields=body,verbose=TRUE))
+
+  print(paste("Saving file",file," to ",getwd()))
+  RCurl::close(fileWriter)
+  return(curlResults)
 }
