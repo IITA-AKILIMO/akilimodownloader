@@ -28,16 +28,16 @@ download_file <- function(url,file,body,hdr=headers){
 #'
 #' @param fileName Name of the file being downloaded
 #' @param fileFolder if file exists within a sub folder provide the sub-folder path
-#' @param user username for accessing the api if empty it will be looked for in the USER env variable
-#' @param pass password for accessing the api if empty it will be looked for in the PASS env variable
+#' @param user username for accessing the api if empty it will be looked for in the ONA_USER env variable
+#' @param pass password for accessing the api if empty it will be looked for in the ONA_PASS env variable
 #' @param base_url domain name for the api if empty it will be looked for in the BASE_URL env variable
 #' @param end_point resource where the file will be served
 #' @param auth_type authentication type default is basic
 #' @return download status fo the file
 #' @export
 process_download <- function(fileName,fileFolder="",
-                             user =Sys.getenv("USER"),
-                             pass =Sys.getenv("PASS"),
+                             user =Sys.getenv("ONA_USER"),
+                             pass =Sys.getenv("ONA_PASS"),
                              base_url =Sys.getenv("BASE_URL"),
                              end_point = "/v1/ona-data/download",
                              auth_type = 'basic',
