@@ -12,6 +12,7 @@ headers <- list(Accept="text/*",Accept="application/*",
 #' @param bod contains data to be sent to the download endpoint
 #' @param hdr HTTP headers for additional information
 #' @return download status
+#' @export
 download_file <- function(url,file,body,hdr=headers){
   fileWriter = RCurl::CFILE(file, mode="wb")
   curlResults = RCurl::curlPerform(url = url, writedata = fileWriter@ref, noprogress=FALSE,

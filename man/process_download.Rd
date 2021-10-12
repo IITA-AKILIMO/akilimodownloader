@@ -7,8 +7,8 @@
 process_download(
   fileName,
   fileFolder = "",
-  user = Sys.getenv("USER"),
-  pass = Sys.getenv("PASS"),
+  user = Sys.getenv("ONA_USER"),
+  pass = Sys.getenv("ONA_PASS"),
   base_url = Sys.getenv("BASE_URL"),
   end_point = "/v1/ona-data/download",
   auth_type = "basic",
@@ -20,9 +20,9 @@ process_download(
 
 \item{fileFolder}{if file exists within a sub folder provide the sub-folder path}
 
-\item{user}{username for accessing the api if empty it will be looked for in the USER env variable}
+\item{user}{username for accessing the api if empty it will be looked for in the ONA_USER env variable}
 
-\item{pass}{password for accessing the api if empty it will be looked for in the PASS env variable}
+\item{pass}{password for accessing the api if empty it will be looked for in the ONA_PASS env variable}
 
 \item{base_url}{domain name for the api if empty it will be looked for in the BASE_URL env variable}
 
